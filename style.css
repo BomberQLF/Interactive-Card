@@ -7,31 +7,33 @@
 
 body {
   display: flex;
+  flex-direction: column;
   height: 100vh;
 }
-body #leftSide {
+
+#leftSide {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  width: 483px;
+  width: 100%;
   background-image: url(images/bg-main-desktop.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-body #leftSide #front {
+#leftSide #front {
   position: relative;
-  left: 25%;
+  left: 0;
   top: 6%;
 }
-body #leftSide #front #logoCard {
+#leftSide #front #logoCard {
   position: relative;
   bottom: 68%;
   margin: 30px 0 0 30px;
 }
-body #leftSide #front #cardNumber {
+#leftSide #front #cardNumber {
   position: relative;
   bottom: 48%;
   left: 8%;
@@ -41,7 +43,7 @@ body #leftSide #front #cardNumber {
   font-weight: 500;
   letter-spacing: 4px;
 }
-body #leftSide #front .infoRender {
+#leftSide #front .infoRender {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -49,22 +51,22 @@ body #leftSide #front .infoRender {
   left: 8%;
   color: white;
 }
-body #leftSide #front .infoRender #nameRender {
+#leftSide #front .infoRender #nameRender {
   text-transform: uppercase;
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 2px;
 }
-body #leftSide #front .infoRender #dateRender {
+#leftSide #front .infoRender #dateRender {
   margin-right: 25%;
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 2px;
 }
-body #leftSide #back {
+#leftSide #back {
   position: relative;
-  left: 25%;
+  left: 0;
   bottom: 4%;
 }
-body #leftSide #back #cvcRender {
+#leftSide #back #cvcRender {
   position: relative;
   left: 105%;
   bottom: 55.5%;
@@ -72,23 +74,26 @@ body #leftSide #back #cvcRender {
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 2px;
 }
-body #rightSide {
+
+#rightSide {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 22%;
+  margin-left: 0;
+  padding: 20px;
+  width: 100%;
 }
-body #rightSide .detailsContainer {
+#rightSide .detailsContainer {
   margin-bottom: 18px;
 }
-body #rightSide .detailsContainer label {
+#rightSide .detailsContainer label {
   display: inline-block;
   margin-bottom: 10px;
   font-family: "Space Grotesk", sans-serif;
   text-transform: uppercase;
   font-size: 0.8rem;
 }
-body #rightSide .detailsContainer input {
+#rightSide .detailsContainer input {
   border-radius: 8px;
   border: 1px solid #DFDEE0;
   height: 45px;
@@ -98,25 +103,107 @@ body #rightSide .detailsContainer input {
   font-weight: 400;
   font-size: 1.1rem;
 }
-body #rightSide .detailsContainer input:hover {
+#rightSide .detailsContainer input:hover {
   cursor: pointer;
 }
-body #rightSide .detailsContainer input::placeholder {
+#rightSide .detailsContainer input::placeholder {
   color: #DFDEE0;
 }
-body #rightSide .detailsContainer input:focus {
+#rightSide .detailsContainer input:focus {
   border-image: linear-gradient(90deg, #6348FE 0%, #610595 100%) 1;
   outline: none;
   border-radius: 8px;
 }
-body #rightSide .detailsContainer .bigInput {
-  width: 381px;
+#rightSide .detailsContainer .bigInput {
+  width: 100%;
 }
-body #rightSide .detailsContainer .mediumInput {
-  width: 80px;
+#rightSide .detailsContainer .mediumInput {
+  width: calc(50% - 10px);
+  margin-right: 10px;
 }
-body #rightSide .detailsContainer .smallInput {
-  width: 191px;
+#rightSide .detailsContainer .smallInput {
+  width: 100%;
+}
+#rightSide .detailsContainer .error-message {
+  color: red;
+  font-size: 0.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  margin-top: 8px;
+}
+#rightSide button {
+  background-color: #21092F;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 53px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 28px;
+}
+
+.successBox {
+  margin: auto;
+}
+.successBox h1 {
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+.successBox p {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  color: #8F8694;
+  margin-top: 8px;
+}
+.successBox button {
+  background-color: #21092F;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 53px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 28px;
+}
+
+@media (min-width: 500px) {
+  body {
+    flex-direction: row;
+  }
+  #leftSide {
+    width: 483px;
+  }
+  #leftSide #front {
+    left: 25%;
+  }
+  #leftSide #back {
+    left: 25%;
+  }
+  #rightSide {
+    margin-left: 22%;
+    width: auto;
+  }
+  #rightSide .detailsContainer .bigInput {
+    width: 381px;
+  }
+  #rightSide .detailsContainer .mediumInput {
+    width: 80px;
+  }
+  #rightSide .detailsContainer .smallInput {
+    width: 191px;
+  }
+  #rightSide .detailsContainer button {
+    width: 381px;
+  }
+  #rightSide .successBox {
+    margin-top: 80px;
+  }
+  #rightSide .successBox button {
+    width: 381px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
