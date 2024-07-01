@@ -1,0 +1,140 @@
+$maPolice: "Space Grotesk", sans-serif;
+$border-color: #DFDEE0;
+$gradient-focus: linear-gradient(90deg, #6348FE 0%, #610595 100%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+
+  #leftSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 483px;
+    background-image: url(images/bg-main-desktop.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    #front {
+      position: relative;
+      left: 25%;
+      top: 6%;
+
+      #logoCard {
+        position: relative;
+        bottom: 68%;
+        margin: 30px 0 0 30px;
+      }
+      #cardNumber {
+        position: relative;
+        bottom: 48%;
+        left: 8%;
+        color: white;
+        font-size: 1.5rem;
+        font-family: $maPolice;
+        font-weight: 500;
+        letter-spacing: 4px;
+      }
+      .infoRender {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        bottom: 41%;
+        left: 8%;
+        color: white;
+
+        #nameRender {
+          text-transform: uppercase;
+          font-family: $maPolice;
+          letter-spacing: 2px;
+        }
+        #dateRender {
+          margin-right: 25%;
+          font-family: $maPolice;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    #back {
+      position: relative;
+      left: 25%;
+      bottom: 4%;
+
+      #cvcRender {
+        position: relative;
+        left: 105%;
+        bottom: 55.5%;
+        color: white;
+        font-family: $maPolice;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  #rightSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 22%;
+
+    .detailsContainer {
+      margin-bottom: 18px;
+
+      label {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-family: $maPolice;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      input {
+        border-radius: 8px;
+        border: 1px solid $border-color;
+        height: 45px;
+        padding: 14px;
+        color: #21092F;
+        font-family: $maPolice;
+        font-weight: 400;
+        font-size: 1.1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+        
+        &::placeholder {
+          color: $border-color;
+        }
+
+        &:focus {
+          border-image: $gradient-focus 1;
+          outline: none;
+          border-radius: 8px;
+        }
+      }
+
+      .bigInput {
+        width: 381px;
+      }
+
+      .mediumInput {
+        width: 80px;
+      }
+
+      .smallInput {
+        width: 191px;
+      }
+    }
+  }
+}
